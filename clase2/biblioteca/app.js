@@ -43,13 +43,13 @@ function consultarLibros() {
 function agregarLibro(nuevoLibro, callbackExterna) {
     leerDatos((err, libros) => {
         if (err) return console.error(err);
-        
+
         libros.push(nuevoLibro);
-        
+
         escribirDatos(libros, (errEscritura, mensaje) => {
             if (errEscritura) return console.error(errEscritura);
             console.log(`[Éxito]: El libro "${nuevoLibro.titulo}" ha sido agregado.`);
-            if(callbackExterna) callbackExterna();
+            if (callbackExterna) callbackExterna();
         });
     });
 }
@@ -58,19 +58,19 @@ function agregarLibro(nuevoLibro, callbackExterna) {
 function actualizarDisponibilidad(titulo, estaDisponible, callbackExterna) {
     leerDatos((err, libros) => {
         if (err) return console.error(err);
-        
+
         const libroEncontrado = libros.find(libro => libro.titulo.toLowerCase() === titulo.toLowerCase());
-        
+
         if (libroEncontrado) {
             libroEncontrado.disponible = estaDisponible;
             escribirDatos(libros, (errEscritura, mensaje) => {
                 if (errEscritura) return console.error(errEscritura);
                 console.log(`[Éxito]: La disponibilidad de "${titulo}" ha sido actualizada a ${estaDisponible ? 'Disponible' : 'Prestado'}.`);
-                if(callbackExterna) callbackExterna();
+                if (callbackExterna) callbackExterna();
             });
         } else {
             console.log(`[Error]: No se encontró el libro con el título "${titulo}".`);
-            if(callbackExterna) callbackExterna();
+            if (callbackExterna) callbackExterna();
         }
     });
 }
@@ -86,10 +86,10 @@ setTimeout(() => {
     // 1. Agregamos un libro nuevo
     const nuevo = { titulo: "Dune", autor: "Frank Herbert", genero: "Ciencia ficción", disponible: true };
     agregarLibro(nuevo, () => {
-        
+
         // 2. Al terminar, actualizamos la disponibilidad de otro libro
         actualizarDisponibilidad("1984", true, () => {
-            
+
             // 3. Al terminar, volvemos a consultar para verificar los cambios
             console.log("\n>>> ESTADO FINAL DESPUÉS DE LAS OPERACIONES:");
             consultarLibros();
