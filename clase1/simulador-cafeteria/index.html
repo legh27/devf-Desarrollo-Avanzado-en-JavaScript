@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Cafetería</title>
+    <meta name="description" content="Simulador de pedidos para entender el Event Loop en JavaScript.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Cafetería <span class="highlight">Asíncrona</span></h1>
+            <p>El Event Loop en acción</p>
+            <button id="add-order-btn" class="glow-on-hover">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                Agregar Pedido
+            </button>
+        </header>
+
+        <main>
+            <div class="orders-board">
+                <div class="column" id="pending-orders">
+                    <h2>En Proceso <span class="badge" id="pending-count">0</span></h2>
+                    <div class="order-list" id="pending-list">
+                        <!-- Pedidos en proceso aparecerán aquí -->
+                    </div>
+                </div>
+                <div class="column" id="completed-orders">
+                    <h2>Completados <span class="badge" id="completed-count">0</span></h2>
+                    <div class="order-list" id="completed-list">
+                        <!-- Pedidos completados aparecerán aquí -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
