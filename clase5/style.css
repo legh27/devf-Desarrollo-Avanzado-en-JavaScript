@@ -1,0 +1,65 @@
+/* Estilos básicos para el formulario */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+form {
+  width: 50%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+label:has(input[type="checkbox"]), label:has(input[type="radio"]) {
+  font-weight: normal;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], 
+input[type="date"], input[type="time"], input[type="file"], select, button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 10px;
+  min-height: 14px;
+}
