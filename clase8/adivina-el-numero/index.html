@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="glass-panel">
+            <h1>Adivina el Número</h1>
+            <p class="subtitle">La computadora ha generado un número entre 1 y 100. Tienes <span id="intentos" class="highlight">7</span> intentos restantes. ¡Adivínalo!</p>
+            
+            <div class="input-area">
+                <input type="number" id="numero" placeholder="Ej. 42" min="1" max="100">
+                <button id="adivinar" class="btn">Adivinar</button>
+            </div>
+            
+            <p id="mensaje" class="mensaje"></p>
+            
+            <button id="reiniciar" class="btn btn-secondary hidden">Jugar de Nuevo</button>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
